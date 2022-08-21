@@ -28,7 +28,7 @@ func NewTransaction() *Transaction {
 	return t
 }
 
-func (t Transaction) ProcessAndValidate(card CreditCard) {
+func (t Transaction) ProcessAndValidate(card *CreditCard) {
 	if t.Amount+card.Balance > card.Limit {
 		t.Status = "rejected"
 	} else {
